@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusWell | Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header class="site-header small">
+        <div class="nav">
+            <div class="brand">CampusWell</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="predict.html" class="active">Predict</a>
+                <a href="how.html">How it works</a>
+                <a class="gh" href="https://github.com/SamsrithM/ML-PROJECT" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.24 1.83 1.24 1.07 1.84 2.8 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.55.12-3.22 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.67.25 2.91.12 3.22.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .5Z"/></svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Depression Risk Prediction</h1>
+        <p class="subtitle">Answer the questions below. Terms use college context; tooltips explain each field.</p>
+        <form id="prediction-form" class="card form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sex">Sex <span title="Biological sex as recorded by the college">?</span></label>
+                    <select id="sex" name="sex" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age <span title="Your current age in years">?</span></label>
+                    <input type="number" id="age" name="age" min="15" max="80" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="failures">Past Course Failures <span title="Number of past course failures (0–4)">?</span></label>
+                    <input type="number" id="failures" name="failures" min="0" max="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="absences">College Absences <span title="Number of total absences (0–93)">?</span></label>
+                    <input type="number" id="absences" name="absences" min="0" max="93" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="goout">Going out with friends (0–20) <span title="Number of times per week you go out with friends">?</span></label>
+                    <input type="number" id="goout" name="goout" min="0" max="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="studytime">Weekly Study Time (hours) <span title="Select your weekly study hours range">?</span></label>
+                    <select id="studytime" name="studytime" required>
+                        <option value="<4">Less than 4 hours</option>
+                        <option value="4-8">4-8 hours</option>
+                        <option value="8-12">8-12 hours</option>
+                        <option value=">12">More than 12 hours</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="alcohol_habit">Alcohol habit <span title="Check if you have an alcohol habit; it negatively impacts wellbeing">?</span></label>
+                    <input type="checkbox" id="alcohol_habit" name="alcohol_habit">
+                </div>
+                <div class="form-group">
+                    <label for="health">Current Health <span title="Rate your overall health status">?</span></label>
+                    <select id="health" name="health" required>
+                        <option value="very_bad">Very Bad</option>
+                        <option value="bad">Bad</option>
+                        <option value="average" selected>Average</option>
+                        <option value="good">Good</option>
+                        <option value="very_good">Very Good</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="G3">GPA (0.00–10.00) <span title="Your current Grade Point Average">?</span></label>
+                    <input type="number" id="G3" name="G3" min="0" max="10" step="0.01" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="family_hours">Hours spent with family per week <span title="Number of hours per week you spend with family members">?</span></label>
+                    <input type="number" id="family_hours" name="family_hours" min="0" max="50" step="0.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="activity_hours">Hours of activities/playing per week <span title="Number of hours per week spent on sports, games, hobbies, or other recreational activities">?</span></label>
+                    <input type="number" id="activity_hours" name="activity_hours" min="0" max="50" step="0.5" required>
+                </div>
+            </div>
+            <button type="submit" class="btn primary">Predict</button>
+            <div id="error" class="error"></div>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <p>After submitting, you will be taken to the result page.</p>
+    </footer>
+</body>
+</html>
+
