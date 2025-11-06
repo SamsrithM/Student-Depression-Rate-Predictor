@@ -275,6 +275,7 @@ Comparison chart is available on the "How it works" page.
 - M.Samsrith
 - P.Sarath Chandra
 - G.Kiran Kriteen
+
 **Date**: 2025  
 **Academic Project**: ML-PROJECT
 
