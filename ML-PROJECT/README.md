@@ -271,6 +271,7 @@ Comparison chart is available on the "How it works" page.
 
 ---
 
-**Developed by**: [Your Name]  
-**Date**: 2025  
+**Developed by**: [Samsrith , Sarat , Kiran]  
+**Date**: Oct/2025  
 **Academic Project**: ML-PROJECT
+
