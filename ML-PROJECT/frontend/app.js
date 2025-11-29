@@ -1,4 +1,3 @@
-
 // Handle Predict form page
 const form = document.getElementById('prediction-form');
 if (form) {
