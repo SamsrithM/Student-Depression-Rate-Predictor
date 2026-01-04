@@ -5,7 +5,7 @@ import joblib
 from pathlib import Path
 
 # Load the dataset
-df = pd.read_csv('d:\\study college\\3rd year\\ML-PROJECT\\studataset.csv')
+df = pd.read_csv('..\\ML-PROJECT\\studataset.csv')
 
 # Create a synthetic 'depression' column
 df['depression'] = ((df['failures'] > 0) | (df['absences'] > 15) | (df['G3'] < 8)).astype(int)
