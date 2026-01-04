@@ -31,6 +31,7 @@
             <h3>Overview</h3>
             <p>The predictor uses Logistic Regression on a set of college-related features: course failures, absences, going-out frequency, study time, health, and GPA. The alcohol habit is mapped to a risk signal internally. We evaluated additional models to compare performance.</p>
         </div>
+        
         <div class="card" style="margin-bottom: 1rem;">
             <h3>Features and effects</h3>
             <ul>
@@ -46,12 +47,14 @@
                 <li><b>Sex/Age</b>: Collected for context; not used in the current model.</li>
             </ul>
         </div>
+        
         <div class="card" style="margin-bottom: 1rem;">
             <h3>Model comparison (test accuracy)</h3>
             <p>These numbers are computed from your dataset using an 80/20 split. Run the evaluator to refresh values.</p>
             <canvas id="modelChart" height="120"></canvas>
             <p id="metricsNote" class="subtitle"></p>
         </div>
+        
         <div class="card">
             <h3>Current model</h3>
             <p>We currently serve <b>Logistic Regression</b> because it provides strong performance with interpretability. You can switch to another model if it outperforms LR.</p>
@@ -61,5 +64,7 @@
     <footer class="site-footer">
         <p>To refresh metrics, run <code>python backend/evaluate_models.py</code> and reload this page.</p>
     </footer>
+    
 </body>
 </html>
+
