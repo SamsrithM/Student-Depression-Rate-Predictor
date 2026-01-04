@@ -16,7 +16,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 def load_dataset() -> pd.DataFrame:
     # Use the same dataset path as trainer
-    csv_path = Path('d:/study college/3rd year/ML-PROJECT/studataset.csv')
+    csv_path = Path('../ML-PROJECT/studataset.csv')
     df = pd.read_csv(csv_path)
     # Create the synthetic target like in train_model.py
     df['depression'] = ((df['failures'] > 0) | (df['absences'] > 15) | (df['G3'] < 8)).astype(int)
@@ -87,3 +87,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
